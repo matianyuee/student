@@ -1,0 +1,27 @@
+<div id="title"><h3>查询学生</h3></div>
+<%= link_to '首页', root_path %>
+<%=form_tag selectstudent_studentinfos_path, method: :get do |f|%>
+<%= text_field_tag 'name', value=params[:name] %>
+<%if @container == nil%>
+<%= select_tag "container_id", options_for_select(Container.all.map{|c|[c.name,c.id]}),include_blank: '请选择' %>
+<% else%>
+<%= select_tag "container_id", options_for_select(Container.all.map{|c|[c.name,c.id]}),include_blank: @container.name  %>
+<% end %>
+<%= submit_tag '查找', :id => 'look'%>
+<% end %>
+  <div id="studnetshow">
+    <table id="ta">
+      <tr id="trcolor">
+        <td>姓名</td>
+        <td>性别</td>
+        <td>班级</td>
+      </tr>
+     <% @student.each do |student|%>
+       <tr id="bgtr">
+         <td><%= student.name %></td>
+         <td><%= student.gender%></td>
+         <td><%= student.container.name%></td>
+       </tr>
+     <% end%>
+   </table>
+   </div>

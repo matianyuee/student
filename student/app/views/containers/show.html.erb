@@ -1,0 +1,34 @@
+<div id="title"><strong>班级信息</strong></div> 
+<div id="spantop">
+  <span>学生信息</span>
+
+ <table id="ta">
+    <tr id="trcolor">
+      <td>姓名</td>
+      <td>性别</td>
+    </tr>
+  <% @students.each do |student| %>
+    <tr id="bgtr">
+      <td><%= student.name %></td>
+      <td><%= student.gender %></td>
+    </tr>
+  <% end %>
+ </table>
+</div>
+
+<div id="spantop">
+  <span>教师信息</span>
+ <table id="ta">
+   <tr id="trcolor">
+     <td>姓名</td>
+     <td>性别</td>
+   </tr>
+   <% @teachers.each do |teacher| %>
+     <tr id="bgtr">
+       <td><%= teacher.name %></td>
+       <td><%= teacher.gender %></td>
+     </tr>
+   <% end %>
+  </table>
+</div>
+<%= link_to '返回', containers_path%>

@@ -1,0 +1,21 @@
+<div id='title'><h3 >教师信息</h3></div>
+<%= link_to '首页', root_path %>
+<a href="teachers/new"><button>录入教师</button></a>
+<br/>
+<table id='ta'>
+  <tr id="trcolor">
+    <td>姓名</td>
+    <td>性别</td>
+    <td>操作</td>
+  </tr>
+  <% @teachers.each do |teacher| %>
+    <tr id="bgtr">
+      <td><%= teacher.name %></td>
+      <td><%= teacher.gender %></td>
+      <td><%= link_to '编辑', edit_teacher_path(teacher)%>
+      <%= link_to '详情', teacher_path(teacher)%>
+      <%= link_to '删除', teacher_path(teacher),
+                      method: :delete, data: { confirm: '确认删除？'}%></td>
+    </tr>
+  <% end %>
+</table>

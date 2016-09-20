@@ -1,0 +1,21 @@
+<%= form_for @student do |f| %>
+  <p>
+    <%= f.label :班级 %>
+    <%= f.select :container_id, Container.all.collect { |p| [ p.name, p.id ] } %>
+  </p>
+
+  <p>
+    <%= f.label :姓名 %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :性别 %><br>
+    <%= f.text_field :gender %>
+  </p>
+
+  <p>
+    <%= f.submit '完成' %>
+  </p>
+<% end %>
+<%= link_to '返回', containers_path%>

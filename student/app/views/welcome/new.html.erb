@@ -1,0 +1,24 @@
+<script>
+ function hide(){
+ $("ul").slideToggle(); 
+}
+</script>
+<div id="title"><h1>学生管理系统</h1></div>
+<div id="borderdiv">
+   
+<ul>
+  <li id="k"><%= link_to '查看班级', controller: 'containers'%></li>
+  <li id="k"><%= link_to '查看学生', controller: 'studentinfos'%></li>
+  <li id="k"><%= link_to '查询', controller: 'studentinfos', action: 'selectstudent'%></li>
+  <li id="k"><%= link_to '教师', controller: 'teachers'%></li>
+</ul>
+</div>
+
+
+<div class="dropdown" style="float:left;">
+  <button class="dropbtn">菜单</button>
+  <div class="dropdown-content" style="left:0;">
+  <a href="#"><li id="k"><%= link_to '查看班级', controller: 'containers'%></li></a>
+    <a href="#">W3Cschool教程 2</a>
+    <a href="#">W3Cschool教程 3</a>
+  </div>

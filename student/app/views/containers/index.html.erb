@@ -1,0 +1,20 @@
+<div id="title"><h3>所有班级</h3></div>
+<%= link_to '首页', root_path %>
+<%= link_to '添加班级', new_container_path %>
+<%= link_to '添加学生', new_studentinfo_path %>
+<table id="ta">
+  <tr id="trcolor">
+    <td>名称</td>
+    <td>操作</td>
+  </tr>
+
+  <% @containers.each do |container| %>
+    <tr id="bgtr">
+      <td><%= container.name %></td>
+      <td><%= link_to '编辑', edit_container_path(container) %>
+          <%= link_to '详情', container_path(container) %>
+          <%= link_to '删除', container_path(container),
+                      method: :delete, data: { confirm: '确认删除？'}%></td>
+    </tr>
+  <% end %>
+</table>

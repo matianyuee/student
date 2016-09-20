@@ -1,0 +1,19 @@
+<%= form_for @teacher do |f| %>
+  <p>
+     <%= f.label :班级 %>
+     <%= f.select :container_id, Container.all.collect { |p| [ p.name, p.id ] } %>
+  </p>
+  <p>
+    <%= f.label :姓名 %>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :性别 %>
+    <%= f.text_field :gender %>
+  </p>
+ 
+  <p>
+    <%= f.submit '完成'%>
+  </p>
+<% end %>

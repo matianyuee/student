@@ -1,0 +1,10 @@
+<%= form_for @container do |f| %>
+  <p>
+    <%= f.label :名称 %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.submit '完成' %>
+  </p>
+<% end %>
