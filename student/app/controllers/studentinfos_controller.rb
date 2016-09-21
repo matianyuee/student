@@ -32,7 +32,7 @@ class StudentinfosController < ApplicationController
   end
 
   def selectstudent
-    con_id = 0 # 班级id 默认wei 0
+    con_id = 0 
     if ((con_id= params[:container_id].to_i) > 0)
       @container = Container.find(con_id)
       @student = @container.studentinfos.where(["name like ?","%#{params[:name]}%"])
